@@ -1,7 +1,6 @@
 package model.mo;
 
 public class User {
-
   private String nome;
   private String cognome;
   private String username;
@@ -10,6 +9,26 @@ public class User {
   private String email;
   private String tipo_u;
 
+  public User() {
+      this.nome = null;
+      this.cognome = null;
+      this.username = null;
+      this.password = null;
+      this.cellulare = null;
+      this.email = null;
+      this.tipo_u = null;
+  }
+  
+  public User (String nome, String cognome, String username, String password, String cellulare, String email, String tipo_u){
+      this.nome = nome;
+      this.cognome = cognome;
+      this.username = username;
+      this.password = password;
+      this.cellulare = cellulare;
+      this.email = email;
+      this.tipo_u = tipo_u;
+  }
+  
   public String getNome() {
     return nome;
   }
@@ -64,5 +83,15 @@ public class User {
   
   public void setTipo_u(String tipo_u){
     this.tipo_u = tipo_u;
+  }
+  
+  @Override
+  public boolean equals(Object o){
+      User cliente = (User)o;
+      if(this.nome.equals(cliente.getNome()) && this.cognome.equals(cliente.getCognome()) && this.username.equals(cliente.getUsername()) && this.password.equals(cliente.getPassword()) && this.cellulare.equals(cliente.getCellulare()) && this.email.equals(cliente.getEmail()) && this.tipo_u.equals(cliente.getTipo_u())){
+          return true;
+      } else {
+          return false;
+      }
   }
 }
