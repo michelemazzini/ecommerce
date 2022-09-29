@@ -54,4 +54,51 @@ public class UserDAOMySQLJDBCImplTest {
             }
         }
     }
+    
+    @Test
+    public void findAmministratoreByUsernameTest(){
+        DAOFactory daoFactory = null;
+        
+        try {
+            daoFactory = DAOFactory.getDAOFactory(Configuration.DAO_IMPL);
+            daoFactory.beginTransaction(); 
+            
+            //Inserisco un utente di test nel database
+            String nome= "Michele";
+            String cognome="Mazzini";
+            String username="MicTest";
+            String password="MicTest";
+            String cellulare="3317901153";
+            String email="michele.mazzini1996@gmail.com";
+            String tipo_u="amministratore";
+            User amministratoreTest = new User(nome, cognome, username, password, cellulare, email, tipo_u);
+            
+            UserDAO userDAO = daoFactory.getUserDAO();
+            userDAO.insertIntoUtenteRegistrato(nome, cognome, username, password, cellulare, email, tipo_u);
+            userDAO.insertIntoAmministratore(username);
+            
+            //Test vero e proprio
+            User amministratore = userDAO.findAmministratoreByUsername(username);
+            assertEquals(amministratore, amministratoreTest); 
+            
+            //Elimino l'utente di test dal database
+            userDAO.removeUser(username);
+            daoFactory.commitTransaction();
+        } catch (Exception e) {
+            try {
+                if (daoFactory != null) {
+                    daoFactory.rollbackTransaction();
+                }
+            } catch (Throwable t) {
+            }
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                if (daoFactory != null) {
+                    daoFactory.closeTransaction();
+                }
+            } catch (Throwable t) {
+            }
+        }
+    }
 }
