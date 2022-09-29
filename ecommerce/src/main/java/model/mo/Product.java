@@ -11,6 +11,30 @@ public class Product {
   private float spessore;
   private int quantita;
 
+  public Product(){
+      this.nome = null;
+      this.productId = null;
+      this.marca = null;
+      this.categoria = null;
+      this.prezzo = 0;
+      this.larghezza = 0;
+      this.altezza = 0;
+      this.spessore = 0;
+      this.quantita = 0;
+  }
+  
+  public Product(String nome, String productId, String marca, String categoria, float prezzo, float larghezza, float altezza, float spessore, int quantita){
+      this.nome = nome;
+      this.productId = productId;
+      this.marca = marca;
+      this.categoria = categoria;
+      this.prezzo = prezzo;
+      this.larghezza = larghezza;
+      this.altezza = altezza;
+      this.spessore = spessore;
+      this.quantita = quantita;
+  }
+  
   public String getProductId() {
     return productId;
   }
@@ -81,5 +105,15 @@ public class Product {
 
   public void setSpessore(float spessore) {
     this.spessore = spessore;
+  }
+  
+  @Override
+  public boolean equals(Object o){
+      Product prodotto = (Product)o;
+      if(this.nome.equals(prodotto.getNome()) && this.productId.equals(prodotto.getProductId()) && this.marca.equals(prodotto.getMarca()) && this.categoria.equals(prodotto.getCategoria()) && this.prezzo == prodotto.getPrezzo() && this.larghezza == prodotto.getLarghezza() && this.altezza == prodotto.getAltezza() && this.spessore == prodotto.getSpessore() && this.quantita == prodotto.getQuantita()){
+          return true;
+      } else {
+          return false;
+      }
   }
 }
