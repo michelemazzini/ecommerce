@@ -6,7 +6,7 @@
 <%@page import="model.mo.Product"%>
 
 <%
-  float tot=0;
+  double tot=0;
   int i = 0;
   boolean loggedOn = (Boolean) request.getAttribute("loggedOn");
   LoggedUser loggedUser = (LoggedUser) request.getAttribute("loggedUser");

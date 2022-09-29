@@ -41,13 +41,13 @@ public class ProductDAOMySQLJDBCImpl implements ProductDAO {
   }
   
   @Override
-  public void insertProduct(String nome, String codice, String marca, String categoria, float prezzo, float larghezza, float altezza, float spessore, int quantita) throws DuplicatedObjectException{
+  public void insertProduct(String nome, String codice, String marca, String categoria, double prezzo, double larghezza, double altezza, double spessore, int quantita) throws DuplicatedObjectException{
     PreparedStatement ps;
     
-    String prezzoString = Float.toString(prezzo);
-    String larghezzaString = Float.toString(larghezza);
-    String altezzaString = Float.toString(altezza);
-    String spessoreString = Float.toString(spessore);
+    String prezzoString = Double.toString(prezzo);
+    String larghezzaString = Double.toString(larghezza);
+    String altezzaString = Double.toString(altezza);
+    String spessoreString = Double.toString(spessore);
     String quantitaString = Integer.toString(quantita);
     
     try{
@@ -182,19 +182,19 @@ public class ProductDAOMySQLJDBCImpl implements ProductDAO {
     } catch (SQLException sqle) {
     }
     try {
-      product.setPrezzo(rs.getFloat("prezzo"));
+      product.setPrezzo(rs.getDouble("prezzo"));
     } catch (SQLException sqle) {
     }
     try {
-      product.setLarghezza(rs.getFloat("larghezza"));
+      product.setLarghezza(rs.getDouble("larghezza"));
     } catch (SQLException sqle) {
     }
     try {
-      product.setAltezza(rs.getFloat("altezza"));
+      product.setAltezza(rs.getDouble("altezza"));
     } catch (SQLException sqle) {
     }
     try {
-      product.setSpessore(rs.getFloat("spessore"));
+      product.setSpessore(rs.getDouble("spessore"));
     } catch (SQLException sqle) {
     }
     try {

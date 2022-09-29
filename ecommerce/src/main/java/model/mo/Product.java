@@ -5,10 +5,10 @@ public class Product {
   private String productId;
   private String marca;
   private String categoria;
-  private float prezzo;
-  private float larghezza;
-  private float altezza;
-  private float spessore;
+  private double prezzo;
+  private double larghezza;
+  private double altezza;
+  private double spessore;
   private int quantita;
 
   public Product(){
@@ -23,7 +23,7 @@ public class Product {
       this.quantita = 0;
   }
   
-  public Product(String nome, String productId, String marca, String categoria, float prezzo, float larghezza, float altezza, float spessore, int quantita){
+  public Product(String nome, String productId, String marca, String categoria, double prezzo, double larghezza, double altezza, double spessore, int quantita){
       this.nome = nome;
       this.productId = productId;
       this.marca = marca;
@@ -75,35 +75,35 @@ public class Product {
     this.quantita = quantita;  
   }
   
-  public float getPrezzo() {
+  public double getPrezzo() {
     return prezzo;
   }
 
-  public void setPrezzo(float prezzo) {
+  public void setPrezzo(double prezzo) {
     this.prezzo = prezzo;
   }
 
-  public float getLarghezza() {
+  public double getLarghezza() {
     return larghezza;
   }
 
-  public void setLarghezza(float larghezza) {
+  public void setLarghezza(double larghezza) {
     this.larghezza = larghezza;
   }
 
-  public float getAltezza() {
+  public double getAltezza() {
     return altezza;
   }
 
-  public void setAltezza(float altezza) {
+  public void setAltezza(double altezza) {
     this.altezza = altezza;
   }
 
-  public float getSpessore() {
+  public double getSpessore() {
     return spessore;
   }
 
-  public void setSpessore(float spessore) {
+  public void setSpessore(double spessore) {
     this.spessore = spessore;
   }
   

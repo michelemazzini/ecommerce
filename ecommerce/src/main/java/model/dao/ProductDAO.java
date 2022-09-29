@@ -1,9 +1,7 @@
 package model.dao;
 
 import java.util.List;
-
 import model.mo.Product;
-
 import model.dao.exception.DuplicatedObjectException;
 
 public interface ProductDAO {
@@ -15,5 +13,5 @@ public interface ProductDAO {
   
   public void deleteProduct(String productName);
   
-  public void insertProduct(String nome, String codice, String marca, String categoria, float prezzo, float larghezza, float altezza, float spessore, int quantita) throws DuplicatedObjectException;
+  public void insertProduct(String nome, String codice, String marca, String categoria, double prezzo, double larghezza, double altezza, double spessore, int quantita) throws DuplicatedObjectException;
 }

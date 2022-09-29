@@ -21,10 +21,10 @@ public class ProductDAOMySQLJDBCImplTest {
             String productId = "id_test";
             String marca = "marcaTest";
             String categoria = "categoriaTest";
-            float prezzo = 1;
-            float larghezza = 1;
-            float altezza = 1;
-            float spessore = 1;
+            double prezzo = 1.1;
+            double larghezza = 1.1;
+            double altezza = 1.1;
+            double spessore = 1.1;
             int quantita = 1;
             
             Product prodottoTest = new Product(nome, productId, marca, categoria, prezzo, larghezza, altezza, spessore, quantita);
@@ -36,7 +36,7 @@ public class ProductDAOMySQLJDBCImplTest {
             Product prodotto = productDAO.searchProductByName(nome);
             assertEquals(prodotto, prodottoTest);
                     
-            productDAO.deleteProduct(productId);
+            productDAO.deleteProduct(nome);
             daoFactory.commitTransaction();
         } catch (Exception e) {
             try {
