@@ -402,7 +402,7 @@ public class ShoppingCartManagement {
       request.setAttribute("viewUrl", "shoppingCartManagement/confirmOrderView");
       
       String priceString = request.getParameter("price");
-      float price = Float.parseFloat(priceString);
+      Double price = Double.parseDouble(priceString);
       request.setAttribute("price", price);
       
     }catch (Exception e) {

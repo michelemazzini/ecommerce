@@ -210,13 +210,13 @@ public class CatalogManagement {
       String categoriaProdotto = request.getParameter("categoriaProdotto");
       String marcaProdotto = request.getParameter("marcaProdotto");
       String prezzoProdottoString = request.getParameter("prezzoProdotto");
-      float prezzoProdotto = Float.parseFloat(prezzoProdottoString);
+      Double prezzoProdotto = Double.parseDouble(prezzoProdottoString);
       String larghezzaProdottoString = request.getParameter("larghezzaProdotto");
-      float larghezzaProdotto = Float.parseFloat(larghezzaProdottoString);
+      Double larghezzaProdotto = Double.parseDouble(larghezzaProdottoString);
       String altezzaProdottoString = request.getParameter("altezzaProdotto");
-      float altezzaProdotto = Float.parseFloat(altezzaProdottoString);
+      Double altezzaProdotto = Double.parseDouble(altezzaProdottoString);
       String spessoreProdottoString = request.getParameter("spessoreProdotto");
-      float spessoreProdotto = Float.parseFloat(spessoreProdottoString);
+      Double spessoreProdotto = Double.parseDouble(spessoreProdottoString);
       String quantitaProdottoString = request.getParameter("quantitaProdotto");
       int quantitaProdotto = Integer.parseInt(quantitaProdottoString);
       

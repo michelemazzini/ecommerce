@@ -153,6 +153,24 @@ public class OrderDAOMySQLJDBCImpl implements OrderDAO {
     return maxNumeroOrdine;
   }
   
+  @Override
+  public void deleteOrder(int numero){
+    PreparedStatement ps;
+    
+    try{
+      String sql = " DELETE FROM order WHERE nome = ?";
+      
+      ps = conn.prepareStatement(sql);
+      ps.setInt(1, numero);
+      
+      ps.executeUpdate();
+      
+      ps.close();
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+  }
+  
   Order read(ResultSet rs) {
     Order order = new Order();
     try {

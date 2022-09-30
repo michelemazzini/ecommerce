@@ -16,4 +16,6 @@ public interface OrderDAO {
   public int maxNumeroOrdine();
   
   public Order searchOrderByNumber(int number);
+  
+  public void deleteOrder(int numero);
 }

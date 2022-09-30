@@ -3,7 +3,7 @@
 <%@page import="model.session.mo.LoggedAdministrator"%>
 
 <%
-  float price = (float) request.getAttribute("price");
+  double price = (double) request.getAttribute("price");
   boolean loggedOn = (Boolean) request.getAttribute("loggedOn");
   LoggedUser loggedUser = (LoggedUser) request.getAttribute("loggedUser");
   LoggedAdministrator loggedAdministrator = (LoggedAdministrator) request.getAttribute("loggedAdministrator");
