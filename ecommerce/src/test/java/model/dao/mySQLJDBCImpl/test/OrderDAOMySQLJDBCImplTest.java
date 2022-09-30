@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import model.dao.DAOFactory;
 import model.dao.OrderDAO;
+import model.dao.UserDAO;
 import services.config.Configuration;
 import model.mo.Order;
 
@@ -15,11 +16,24 @@ public class OrderDAOMySQLJDBCImplTest {
         try {
             daoFactory = DAOFactory.getDAOFactory(Configuration.DAO_IMPL);
             daoFactory.beginTransaction(); 
-           
+            
+            //Inserisco un utente di test nel database
+            String nome= "Michele";
+            String cognome="Mazzini";
+            String username="MicTest";
+            String password="MicTest";
+            String cellulare="3317901153";
+            String email="michele.mazzini1996@gmail.com";
+            String tipo_u="cliente";
+            
+            UserDAO userDAO = daoFactory.getUserDAO();
+            userDAO.insertIntoUtenteRegistrato(nome, cognome, username, password, cellulare, email, tipo_u);
+            userDAO.insertIntoCliente(username);
+            
             //Inserisco un ordine di test nel database
             int numero = 0;
             String indirizzo = "Via di test";
-            String username_c ="test";
+            String username_c ="MicTest";
             String citta = "test";
             String num_carta = "1234567812345678";
             String CVV = "123";
@@ -34,7 +48,7 @@ public class OrderDAOMySQLJDBCImplTest {
             Order ordine = orderDAO.searchOrderByNumber(numero);
             assertEquals(ordine, ordineTest);
             
-            orderDAO.deleteOrder(numero);
+            userDAO.removeUser(username);
             daoFactory.commitTransaction();
         } catch (Exception e) {
             try {
