@@ -109,11 +109,11 @@ public class Product {
   
   @Override
   public boolean equals(Object o){
-      Product prodotto = (Product)o;
-      if(this.nome.equals(prodotto.getNome()) && this.productId.equals(prodotto.getProductId()) && this.marca.equals(prodotto.getMarca()) && this.categoria.equals(prodotto.getCategoria()) && this.prezzo == prodotto.getPrezzo() && this.larghezza == prodotto.getLarghezza() && this.altezza == prodotto.getAltezza() && this.spessore == prodotto.getSpessore() && this.quantita == prodotto.getQuantita()){
-          return true;
-      } else {
-          return false;
-      }
+    Product prodotto = (Product)o;
+    if(this.nome.equals(prodotto.getNome()) && this.productId.equals(prodotto.getProductId()) && this.marca.equals(prodotto.getMarca()) && this.categoria.equals(prodotto.getCategoria()) && this.prezzo == prodotto.getPrezzo() && this.larghezza == prodotto.getLarghezza() && this.altezza == prodotto.getAltezza() && this.spessore == prodotto.getSpessore() && this.quantita == prodotto.getQuantita()){
+      return true;
+    } else {
+      return false;
+    }
   }
 }

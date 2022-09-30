@@ -10,6 +10,28 @@ public class Order {
   private String anno_scad_carta;
   private String mese_scad_carta;
   
+  public Order(){
+      this.numero = 0;
+      this.indirizzo = null;
+      this.username_c = null;
+      this.citta = null;
+      this.num_carta = null;
+      this.CVV = null;
+      this.anno_scad_carta = null;
+      this.mese_scad_carta = null;
+  }
+  
+  public Order(int numero, String indirizzo, String username_c, String citta, String num_carta, String CVV, String anno_scad_carta, String mese_scad_carta){
+      this.numero = numero;
+      this.indirizzo = indirizzo;
+      this.username_c = username_c;
+      this.citta = citta;
+      this.num_carta = num_carta;
+      this.CVV = CVV;
+      this.anno_scad_carta = anno_scad_carta;
+      this.mese_scad_carta = mese_scad_carta;
+  }
+  
   public int getNumeroOrdine() {
     return numero;
   }
@@ -72,5 +94,14 @@ public class Order {
   
   public void setMese_scad_carta(String mese_scad_carta) {
     this.mese_scad_carta = mese_scad_carta;
+  }
+  @Override
+  public boolean equals(Object o){
+    Order ordine = (Order)o;
+    if(this.numero == ordine.getNumeroOrdine() && this.indirizzo.equals(ordine.getIndirizzo()) && this.username_c.equals(ordine.getUsername_c()) && this.citta.equals(ordine.getCitta()) && this.num_carta.equals(ordine.getNum_carta()) && this.CVV.equals(ordine.getCVV()) && this.anno_scad_carta.equals(ordine.getAnno_scad_carta()) && this.mese_scad_carta.equals(ordine.getMese_scad_carta())){
+      return true;
+    } else {
+      return false;
+    }
   }
 }

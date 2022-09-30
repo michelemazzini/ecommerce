@@ -3,9 +3,7 @@ package model.dao.mySQLJDBCImpl;
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.SQLException;
-
 import services.config.Configuration;
-
 import model.dao.DAOFactory;
 import model.dao.UserDAO;
 import model.dao.ProductDAO;
