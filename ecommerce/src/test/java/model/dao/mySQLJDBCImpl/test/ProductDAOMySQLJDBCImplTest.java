@@ -1,6 +1,7 @@
 package model.dao.mySQLJDBCImpl.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import org.junit.jupiter.api.Test;
 import model.dao.DAOFactory;
 import model.dao.ProductDAO;
@@ -15,7 +16,7 @@ public class ProductDAOMySQLJDBCImplTest {
         try {
             daoFactory = DAOFactory.getDAOFactory(Configuration.DAO_IMPL);
             daoFactory.beginTransaction(); 
-            
+           
             //Inserisco un prodotto di test nel database
             String nome = "prodotto_test";
             String productId = "id_test";
@@ -37,6 +38,52 @@ public class ProductDAOMySQLJDBCImplTest {
             assertEquals(prodotto, prodottoTest);
                     
             productDAO.deleteProduct(nome);
+            daoFactory.commitTransaction();
+        } catch (Exception e) {
+            try {
+                if (daoFactory != null) {
+                    daoFactory.rollbackTransaction();
+                }
+            } catch (Throwable t) {
+            }
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                if (daoFactory != null) {
+                    daoFactory.closeTransaction();
+                }
+            } catch (Throwable t) {
+            }
+        }
+    }
+    
+    @Test
+    public void deleteProductTest(){
+        DAOFactory daoFactory = null;
+        
+        try {
+            daoFactory = DAOFactory.getDAOFactory(Configuration.DAO_IMPL);
+            daoFactory.beginTransaction(); 
+            
+            //Inserisco un prodotto di test nel database
+            String nome = "prodotto_test";
+            String productId = "id_test";
+            String marca = "marcaTest";
+            String categoria = "categoriaTest";
+            double prezzo = 1.1;
+            double larghezza = 1.1;
+            double altezza = 1.1;
+            double spessore = 1.1;
+            int quantita = 1;
+                        
+            ProductDAO productDAO = daoFactory.getProductDAO();
+            productDAO.insertProduct(nome, productId, marca, categoria, prezzo, larghezza, altezza, spessore, quantita);
+            
+            //Test vero e proprio
+            productDAO.deleteProduct(nome);
+            Product prodotto = productDAO.searchProductByName(nome);
+            assertNull(prodotto.getNome());
+            
             daoFactory.commitTransaction();
         } catch (Exception e) {
             try {
