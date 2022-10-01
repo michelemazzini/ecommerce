@@ -112,4 +112,58 @@ public class ProductTest {
         prodottoTest.setLarghezza(99);
         assertNotEquals(larghezza, prodottoTest.getLarghezza());
     }
+    
+    @Test
+    public void setAltezzaTest(){
+        //Creo un prodotto di test
+        String nome = "prodotto_test";
+        String productId = "id_test";
+        String marca = "marcaTest";
+        String categoria = "categoriaTest";
+        double prezzo = 1.1;
+        double larghezza = 1.1;
+        double altezza = 1.1;
+        double spessore = 1.1;
+        int quantita = 1;
+        Product prodottoTest = new Product(nome, productId, marca, categoria, prezzo, larghezza, altezza, spessore, quantita);
+        
+        prodottoTest.setAltezza(99);
+        assertNotEquals(altezza, prodottoTest.getAltezza());
+    }
+    
+    @Test
+    public void setSpessoreTest(){
+        //Creo un prodotto di test
+        String nome = "prodotto_test";
+        String productId = "id_test";
+        String marca = "marcaTest";
+        String categoria = "categoriaTest";
+        double prezzo = 1.1;
+        double larghezza = 1.1;
+        double altezza = 1.1;
+        double spessore = 1.1;
+        int quantita = 1;
+        Product prodottoTest = new Product(nome, productId, marca, categoria, prezzo, larghezza, altezza, spessore, quantita);
+        
+        prodottoTest.setSpessore(99);
+        assertNotEquals(spessore, prodottoTest.getSpessore());
+    }
+    
+    @Test
+    public void setQuantitaTest(){
+        //Creo un prodotto di test
+        String nome = "prodotto_test";
+        String productId = "id_test";
+        String marca = "marcaTest";
+        String categoria = "categoriaTest";
+        double prezzo = 1.1;
+        double larghezza = 1.1;
+        double altezza = 1.1;
+        double spessore = 1.1;
+        int quantita = 1;
+        Product prodottoTest = new Product(nome, productId, marca, categoria, prezzo, larghezza, altezza, spessore, quantita);
+        
+        prodottoTest.setQuantita(99);
+        assertNotEquals(quantita, prodottoTest.getQuantita());
+    }
 }
