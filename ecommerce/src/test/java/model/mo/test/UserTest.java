@@ -14,7 +14,7 @@ public class UserTest {
         String password="MicTest";
         String cellulare="3317901153";
         String email="michele.mazzini1996@gmail.com";
-        String tipo_u="";
+        String tipo_u="Tipotest";
         User utenteTest = new User(nome, cognome, username, password, cellulare, email, tipo_u);
         
         utenteTest.setNome("Nomesbagliato");
@@ -30,7 +30,7 @@ public class UserTest {
         String password="MicTest";
         String cellulare="3317901153";
         String email="michele.mazzini1996@gmail.com";
-        String tipo_u="";
+        String tipo_u="Tipotest";
         User utenteTest = new User(nome, cognome, username, password, cellulare, email, tipo_u);
         
         utenteTest.setCognome("Cognomesbagliato");
@@ -46,7 +46,7 @@ public class UserTest {
         String password="MicTest";
         String cellulare="3317901153";
         String email="michele.mazzini1996@gmail.com";
-        String tipo_u="";
+        String tipo_u="Tipotest";
         User utenteTest = new User(nome, cognome, username, password, cellulare, email, tipo_u);
         
         utenteTest.setUsername("Usernamesbagliato");
@@ -62,7 +62,7 @@ public class UserTest {
         String password="MicTest";
         String cellulare="3317901153";
         String email="michele.mazzini1996@gmail.com";
-        String tipo_u="";
+        String tipo_u="Tipotest";
         User utenteTest = new User(nome, cognome, username, password, cellulare, email, tipo_u);
         
         utenteTest.setPassword("Passwordsbagliata");
@@ -78,7 +78,7 @@ public class UserTest {
         String password="MicTest";
         String cellulare="3317901153";
         String email="michele.mazzini1996@gmail.com";
-        String tipo_u="";
+        String tipo_u="Tipotest";
         User utenteTest = new User(nome, cognome, username, password, cellulare, email, tipo_u);
         
         utenteTest.setCellulare("Cellularesbagliato");
@@ -94,10 +94,26 @@ public class UserTest {
         String password="MicTest";
         String cellulare="3317901153";
         String email="michele.mazzini1996@gmail.com";
-        String tipo_u="";
+        String tipo_u="Tipotest";
         User utenteTest = new User(nome, cognome, username, password, cellulare, email, tipo_u);
         
         utenteTest.setEmail("Emailsbagliata");
         assertNotEquals(email, utenteTest.getEmail());
+    }
+    
+    @Test
+    public void setTipo_uTest(){
+        //Creo un utente di test
+        String nome= "Michele";
+        String cognome="Mazzini";
+        String username="MicTest";
+        String password="MicTest";
+        String cellulare="3317901153";
+        String email="michele.mazzini1996@gmail.com";
+        String tipo_u="Tipotest";
+        User utenteTest = new User(nome, cognome, username, password, cellulare, email, tipo_u);
+        
+        utenteTest.setTipo_u("Tiposbagliato");
+        assertNotEquals(tipo_u, utenteTest.getTipo_u());
     }
 }
