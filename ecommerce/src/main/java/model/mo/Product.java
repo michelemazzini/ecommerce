@@ -12,15 +12,7 @@ public class Product {
   private int quantita;
 
   public Product(){
-      this.nome = null;
-      this.productId = null;
-      this.marca = null;
-      this.categoria = null;
-      this.prezzo = 0;
-      this.larghezza = 0;
-      this.altezza = 0;
-      this.spessore = 0;
-      this.quantita = 0;
+
   }
   
   public Product(String nome, String productId, String marca, String categoria, double prezzo, double larghezza, double altezza, double spessore, int quantita){

@@ -10,13 +10,7 @@ public class User {
   private String tipo_u;
 
   public User() {
-      this.nome = null;
-      this.cognome = null;
-      this.username = null;
-      this.password = null;
-      this.cellulare = null;
-      this.email = null;
-      this.tipo_u = null;
+
   }
   
   public User (String nome, String cognome, String username, String password, String cellulare, String email, String tipo_u){

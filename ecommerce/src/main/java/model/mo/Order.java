@@ -11,14 +11,7 @@ public class Order {
   private String mese_scad_carta;
   
   public Order(){
-      this.numero = 0;
-      this.indirizzo = null;
-      this.username_c = null;
-      this.citta = null;
-      this.num_carta = null;
-      this.CVV = null;
-      this.anno_scad_carta = null;
-      this.mese_scad_carta = null;
+      
   }
   
   public Order(int numero, String indirizzo, String username_c, String citta, String num_carta, String CVV, String anno_scad_carta, String mese_scad_carta){
