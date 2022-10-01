@@ -12,7 +12,6 @@ public class Product {
   private int quantita;
 
   public Product(){
-
   }
   
   public Product(String nome, String productId, String marca, String categoria, double prezzo, double larghezza, double altezza, double spessore, int quantita){

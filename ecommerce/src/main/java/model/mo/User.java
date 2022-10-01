@@ -10,7 +10,6 @@ public class User {
   private String tipo_u;
 
   public User() {
-
   }
   
   public User (String nome, String cognome, String username, String password, String cellulare, String email, String tipo_u){

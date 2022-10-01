@@ -11,7 +11,6 @@ public class Order {
   private String mese_scad_carta;
   
   public Order(){
-      
   }
   
   public Order(int numero, String indirizzo, String username_c, String citta, String num_carta, String CVV, String anno_scad_carta, String mese_scad_carta){
