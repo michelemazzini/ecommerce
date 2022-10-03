@@ -72,4 +72,72 @@ public class OrderTest {
         ordineTest.setCitta("cittasbagliata");
         assertNotEquals(citta, ordineTest.getCitta());
     }
+    
+    @Test
+    public void setNum_cartaTest(){
+        //Creo un ordine di test
+        int numero = 0;
+        String indirizzo = "Via di test";
+        String username_c ="MicTest";
+        String citta = "test";
+        String num_carta = "1234567812345678";
+        String CVV = "123";
+        String anno_scad_carta = "2022";
+        String mese_scad_carta = "11";
+        Order ordineTest = new Order(numero, indirizzo, username_c, citta, num_carta, CVV, anno_scad_carta, mese_scad_carta);
+        
+        ordineTest.setNum_carta("numerocartasbagliato");
+        assertNotEquals(num_carta, ordineTest.getNum_carta());
+    }
+    
+    @Test
+    public void setCVVTest(){
+        //Creo un ordine di test
+        int numero = 0;
+        String indirizzo = "Via di test";
+        String username_c ="MicTest";
+        String citta = "test";
+        String num_carta = "1234567812345678";
+        String CVV = "123";
+        String anno_scad_carta = "2022";
+        String mese_scad_carta = "11";
+        Order ordineTest = new Order(numero, indirizzo, username_c, citta, num_carta, CVV, anno_scad_carta, mese_scad_carta);
+        
+        ordineTest.setCVV("CVVsbagliato");
+        assertNotEquals(CVV, ordineTest.getCVV());
+    }
+    
+    @Test
+    public void setAnno_scad_cartaTest(){
+        //Creo un ordine di test
+        int numero = 0;
+        String indirizzo = "Via di test";
+        String username_c ="MicTest";
+        String citta = "test";
+        String num_carta = "1234567812345678";
+        String CVV = "123";
+        String anno_scad_carta = "2022";
+        String mese_scad_carta = "11";
+        Order ordineTest = new Order(numero, indirizzo, username_c, citta, num_carta, CVV, anno_scad_carta, mese_scad_carta);
+        
+        ordineTest.setAnno_scad_carta("annosbagliato");
+        assertNotEquals(anno_scad_carta, ordineTest.getAnno_scad_carta());
+    }
+    
+    @Test
+    public void setMese_scad_cartaTest(){
+        //Creo un ordine di test
+        int numero = 0;
+        String indirizzo = "Via di test";
+        String username_c ="MicTest";
+        String citta = "test";
+        String num_carta = "1234567812345678";
+        String CVV = "123";
+        String anno_scad_carta = "2022";
+        String mese_scad_carta = "11";
+        Order ordineTest = new Order(numero, indirizzo, username_c, citta, num_carta, CVV, anno_scad_carta, mese_scad_carta);
+        
+        ordineTest.setMese_scad_carta("mesesbagliato");
+        assertNotEquals(mese_scad_carta, ordineTest.getMese_scad_carta());
+    }
 }
